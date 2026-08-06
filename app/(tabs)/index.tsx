@@ -1,7 +1,8 @@
 import { ScrollView } from "react-native";
 import Navbar from "../../components/Navbar";
 import Hero from "../../components/Hero";
-import Featurecard from "../../components/Featurecard";
+import FeatureCard from "../../components/FeatureCard";
+import CTA from "../../components/CTA";
 
 export default function HomeScreen() {
   return (
@@ -19,53 +20,54 @@ export default function HomeScreen() {
 
       <Hero />
 
-      <Featurecard
-  icon="📊"
+      <FeatureCard
+  icon="view-dashboard-outline"
   title="Smart Dashboard"
   description="See your next best action instantly"
 />
 
-<Featurecard
-  icon="✅"
+<FeatureCard
+  icon="check-circle-outline"
   title="Intelligent Task Manager"
   description="Auto-prioritized study tasks"
 />
 
-<Featurecard
-  icon="🤖"
+<FeatureCard
+  icon="robot-outline"
   title="AI Study Assistant"
   description="Learn concepts, not just answers"
 />
 
-<Featurecard
-  icon="⏰"
+<FeatureCard
+  icon="timer-outline"
   title="Focus Mode"
   description="Distraction-free study sessions"
 />
 
-<Featurecard
-  icon="📅"
+<FeatureCard
+  icon="calendar-month-outline"
   title="Adaptive Study Planner"
   description="Plans that evolve with you"
 />
 
-<Featurecard
-  icon="📈"
+<FeatureCard
+  icon="chart-line"
   title="Student Analytics"
   description="Insights into how you actually study"
 />
 
-<Featurecard
-  icon="🎯"
+<FeatureCard
+  icon="target"
   title="Exam Tracker"
   description="Countdown and gap analysis"
 />
 
-<Featurecard
-  icon="📖"
+<FeatureCard
+  icon="book-open-page-variant-outline"
   title="Mistake Notebook"
   description="Track and fix recurring errors"
 />
+<CTA />
     </ScrollView>
   );
 }

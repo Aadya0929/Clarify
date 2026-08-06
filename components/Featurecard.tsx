@@ -1,7 +1,8 @@
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { View, Text, StyleSheet } from "react-native";
 
 type FeatureCardProps = {
-  icon: string;
+  icon: keyof typeof MaterialCommunityIcons.glyphMap;
   title: string;
   description: string;
 };
@@ -14,8 +15,12 @@ export default function FeatureCard({
   return (
   <View style={styles.card}>
     <View style={styles.iconContainer}>
-      <Text style={styles.icon}>{icon}</Text>
-    </View>
+  <MaterialCommunityIcons
+    name={icon}
+    size={28}
+    color="#4F46E5"
+  />
+</View>
 
     <View style={styles.textContainer}>
       <Text style={styles.title}>{title}</Text>
@@ -57,11 +62,7 @@ const styles = StyleSheet.create({
 
     marginRight: 16,
   },
-
-  icon: {
-    fontSize: 28,
-  },
-
+  
   textContainer: {
     flex: 1,
   },
