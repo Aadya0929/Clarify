@@ -1,16 +1,24 @@
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
+import { router } from "expo-router";
 
 export default function Navbar() {
   return (
     <View style={styles.container}>
+      {/* Logo */}
       <Text style={styles.logo}>Clarify</Text>
 
+      {/* Buttons */}
       <View style={styles.buttons}>
-        <TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => router.push("/sign-up")}
+        >
           <Text style={styles.signIn}>Sign In</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.signUpButton}>
+        <TouchableOpacity
+          style={styles.signUpButton}
+          onPress={() => router.push("/sign-up")}
+        >
           <Text style={styles.signUp}>Sign Up</Text>
         </TouchableOpacity>
       </View>
@@ -23,7 +31,8 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    paddingHorizontal: 24,
+
+    paddingHorizontal: 32,
     paddingTop: 60,
     paddingBottom: 20,
   },
@@ -37,7 +46,7 @@ const styles = StyleSheet.create({
   buttons: {
     flexDirection: "row",
     alignItems: "center",
-    gap: 18,
+    gap: 14,
   },
 
   signIn: {
@@ -54,7 +63,7 @@ const styles = StyleSheet.create({
   },
 
   signUp: {
-    color: "white",
+    color: "#FFFFFF",
     fontSize: 18,
     fontWeight: "600",
   },

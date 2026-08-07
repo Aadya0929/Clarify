@@ -5,7 +5,7 @@ type Props = {
   onPress?: () => void;
 };
 
-export default function PrimaryButton({
+export default function SecondaryButton({
   title,
   onPress,
 }: Props) {
@@ -15,26 +15,33 @@ export default function PrimaryButton({
       onPress={onPress}
       activeOpacity={0.8}
     >
-      <Text style={styles.text}>{title}</Text>
+      <Text style={styles.text}>
+        {title}
+      </Text>
     </TouchableOpacity>
   );
 }
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: "#3468F6",
-    height: 58,
-    borderRadius: 18,
+    flex: 1,
+
+    height: 50,
+
+    borderRadius: 14,
+
+    borderWidth: 1,
+    borderColor: "#D1D5DB",
 
     justifyContent: "center",
     alignItems: "center",
 
-    marginBottom: 28,
+    backgroundColor: "#FFFFFF",
   },
 
   text: {
-    color: "#FFF",
-    fontSize: 20,
+    color: "#334155",
     fontWeight: "600",
+    fontSize: 15,
   },
 });

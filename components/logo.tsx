@@ -4,7 +4,7 @@ export default function Logo() {
   return (
     <View style={styles.container}>
       <Image
-        source={require("../assets/images/logo.png")}
+        source={require("../assets/images/Logo.png")}
         style={styles.logo}
       />
     </View>

@@ -1,8 +1,13 @@
 import { ScrollView, StyleSheet } from "react-native";
+import { router } from "expo-router";
+
 import Logo from "../components/logo";
 import AuthHeader from "../components/AuthHeader";
 import AuthInput from "../components/AuthInput";
 import PrimaryButton from "../components/PrimaryButton";
+import Divider from "../components/Divider";
+import SocialButton from "../components/SocialButton";
+import TermsText from "../components/TermsText";
 
 export default function SignUpScreen() {
   return (
@@ -12,20 +17,25 @@ export default function SignUpScreen() {
     >
       <Logo />
 
-<AuthHeader
-  title="Create an account"
-  subtitle="Enter your email to sign up for this app"
+      <AuthHeader
+        title="Create an account"
+        subtitle="Enter your email to sign up for this app"
+      />
+
+      <AuthInput placeholder="email@domain.com" />
+
+      <PrimaryButton
+  title="Continue"
+  onPress={() => router.push("/create-password")}
 />
-<Logo />
 
-<AuthHeader
-  title="Create an account"
-  subtitle="Enter your email to sign up for this app"
-/>
+      <Divider/>
 
-<AuthInput placeholder="email@domain.com" />
-<PrimaryButton title="Continue" />
+      <SocialButton provider="google" />
 
+      <SocialButton provider="apple" />
+
+      <TermsText />
     </ScrollView>
   );
 }
