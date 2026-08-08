@@ -5,12 +5,14 @@ type Props = {
   title: string;
   subtitle: string;
   selected?: boolean;
+  onPress?: () => void;
 };
 
 export default function ExamOption({
   title,
   subtitle,
   selected = false,
+  onPress,
 }: Props) {
   return (
     <TouchableOpacity
@@ -19,6 +21,7 @@ export default function ExamOption({
         selected && styles.selected,
       ]}
       activeOpacity={0.8}
+      onPress={onPress}
     >
       <View style={{ flex: 1 }}>
         <Text style={styles.title}>
